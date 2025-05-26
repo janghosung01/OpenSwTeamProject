@@ -1,0 +1,125 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.Mainpage {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.Group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.word {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  position: relative;
+}
+.Name{
+   font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline; 
+}
+.word::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.word:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+.loginBtn, .logoutBtn, .signUpBtn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.loginBtn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.loginBtn:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.logoutBtn {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.logoutBtn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.signUpBtn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  border: 1px solid transparent;
+}
+
+.signUpBtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    padding: 1rem;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .Group {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .word {
+    font-size: 0.9rem;
+  }
+  
+  .loginBtn, .logoutBtn, .signUpBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
