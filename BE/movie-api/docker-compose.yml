@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .                        # Dockerfile 위치
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app                      # 로컬 코드 변경 시 자동 반영
+    environment:
+      TMDB_API_KEY: 109cce58d37ce52d52bad29ccb046065
+      SECRET_KEY: CHANGE_ME
+    ports:
+      - "8000:8000"                # 호스트 8080 → 컨테이너 8000
