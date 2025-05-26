@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "movie-api"
+version = "0.1.0"
+description = "TMDB 기반 영화 API 백엔드"
+authors = ["sangsoo <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = "^0.29.0"
+httpx = "^0.27.0"
+pydantic = "^2.11.4"
+psycopg2-binary = "^2.9.10"
+sqlalchemy = "^2.0.40"
+pyjwt = "^2.10.1"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.20"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
