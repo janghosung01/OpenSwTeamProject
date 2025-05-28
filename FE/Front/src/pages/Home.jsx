@@ -1,5 +1,3 @@
-import MovieList from '../Components/MovieList/MovieList'
-
 function Home() {
 
   
