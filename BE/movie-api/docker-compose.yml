@@ -1,5 +1,15 @@
 services:
-  web:
+  db:    #postgres 데이터베이스 서비스 설정
+      image: postgres:15    #도커 이미지
+      environment:    #환경 변수 설정
+        POSTGRES_USER: movie_user
+        POSTGRES_PASSWORD: movie_pass
+        POSTGRES_DB: movie_user_db
+      ports: # 호스트와 컨테이너 포트 매핑
+        - "5432:5432"
+      volumes: # 데이터 영구 저장을 위한 볼륨 설정
+        - db_data:/var/lib/postgresql/data      # 영구 데이터 저장
+  web: # FastAPI 웹 애플리케이션 서비스 설정
     build: .                        # Dockerfile 위치
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     volumes:
@@ -9,3 +19,13 @@ services:
       SECRET_KEY: CHANGE_ME
     ports:
       - "8000:8000"                # 호스트 8080 → 컨테이너 8000
+
+  adminer:      #관리자 설정
+    image: adminer:latest # Adminer 최신 버전 이미지
+    restart: always # 항상 재시작
+    ports:
+      - "8001:8080"   # 호스트 8081 → Adminer 컨테이너 8080
+    depends_on: # 의존성 설정
+      - db
+volumes:
+  db_data:                          # DB 데이터 보존용 볼륨
