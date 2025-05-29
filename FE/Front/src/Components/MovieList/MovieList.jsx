@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-function MovieList(props) {
+import "./MovieList.css";
+function MovieList() {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [searchVal, SetSearchVal] = useState("");
