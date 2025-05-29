@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp'
 import MyPage from './pages/Mypage'
 import MovieDetail from './pages/MovieDetail'
 import Header from './Components/Header'
+import ProtectedRoute from './Components/ProtectedRoute'
 
 function App() {
   const [isLogin, SetIsLogin] = useState(false);
@@ -46,7 +47,10 @@ function App() {
           <Route path='/login' element={<Login onLoginSuccess={handleLoginSuccess} />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
-          <Route path='/mypage' element={<MyPage />} />
+          <Route path='/mypage' element={
+            <ProtectedRoute isLogin={isLogin}> <MyPage /> </ProtectedRoute>
+            } 
+          />
         </Routes>
       </UserContext.Provider>
     </>
