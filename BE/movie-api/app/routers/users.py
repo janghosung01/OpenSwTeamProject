@@ -23,3 +23,12 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
 @router.get("/users", response_model=List[UserOut], summary="사용자 목록 조회")
 def list_users(db: Session = Depends(get_db)):
     return db.query(User).all() # 데이터베이스에서 모든 사용자 조회
+
+
+# 로그인 엔드포인트
+@router.post("/login", response_model=UserOut, summary="로그인")
+def login(req: LoginRequest, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.user_id == req.user_id).first() # user_id로 사용자 조회
+    if not user or user.password != req.password: 
+        raise HTTPException(400, "아이디 또는 비밀번호가 올바르지 않습니다.")
+    return user

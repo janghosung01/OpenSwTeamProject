@@ -40,3 +40,9 @@ class UserOut(BaseModel):
     class Config: # Pydantic 설정
         from_attributes = True # ORM 모델에서 속성 가져오기
         validate_by_name = True # 별칭 사용
+
+# 로그인 요청 스키마
+class LoginRequest(BaseModel):
+    """로그인 요청 스키마"""
+    user_id: str = Field(..., alias="userId")   # 사용자 ID (필수)
+    password: str # 비밀번호 (필수)
