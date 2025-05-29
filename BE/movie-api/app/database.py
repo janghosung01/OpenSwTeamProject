@@ -1,7 +1,7 @@
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine # SQLAlchemy를 사용하여 PostgreSQL 데이터베이스와 연결하기 위한 설정
+from sqlalchemy.ext.declarative import declarative_base # 데이터베이스 모델의 베이스 클래스
+from sqlalchemy.orm import sessionmaker 
 
 # 1) 환경변수에서 DATABASE_URL 읽기
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -16,10 +16,10 @@ engine = create_engine(
 )
 
 # 3) 세션 팩토리
-SessionLocal = sessionmaker(
-    autocommit=False,
-    autoflush=False,
-    bind=engine,
+SessionLocal = sessionmaker( #
+    autocommit=False, # 자동 커밋 비활성화
+    autoflush=False, # 자동 플러시 비활성화
+    bind=engine, # 엔진 바인딩
 )
 
 # 4) 베이스 클래스
