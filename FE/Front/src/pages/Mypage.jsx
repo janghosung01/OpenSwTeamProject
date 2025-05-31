@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import UserContext from "../Context/UserContext";
-
+import "./MyPage.css"
 
 function Mypage() {
   const [reviews, setReviews] = useState([]);

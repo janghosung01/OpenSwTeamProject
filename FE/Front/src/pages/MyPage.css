@@ -1,0 +1,174 @@
+/* MyPage Styling */
+.mypage-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mypage-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.mypage-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* 세로 레이아웃으로 변경 */
+.mypage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.user-info-section {
+  background-color: var(--background-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.user-info-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+/* 회원 정보 항목들을 항상 가로로 나란히 배열 */
+.user-info-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.user-info-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.user-info-item strong {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.user-info-item span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.reviews-section {
+  background-color: var(--background-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.review-item {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-speed) ease;
+}
+
+.review-item:hover {
+  transform: translateY(-5px);
+}
+
+.review-movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.review-rating {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.review-content {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #737373;
+  text-align: right;
+}
+
+.review-button-delete {
+  align-self: flex-end; /* flex column일 때 오른쪽 정렬 */
+  margin-top: 0.5rem;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.review-button-delete:hover {
+  background-color: #d9363e;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .user-info-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .user-info-item {
+    padding: 0.8rem;
+  }
+
+  .reviews-list {
+    grid-template-columns: 1fr;
+  }
+}

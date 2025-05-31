@@ -1,0 +1,116 @@
+/* SignUp Page Styling */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/placeholder.svg?height=1080&width=1920")
+    no-repeat center center;
+  background-size: cover;
+}
+
+.signup-form {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3rem 4rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.signup-form label {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus {
+  outline: none;
+  background-color: #454545;
+}
+
+.signup-form .gender-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.signup-form .gender-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.signup-form input[type="radio"] {
+  accent-color: var(--primary-color);
+  width: 1rem;
+  height: 1rem;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.signup-form button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.signup-form button[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+
+.signup-form button[type="button"] {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.signup-form button[type="button"]:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.signup-form .login-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: #737373;
+}
+
+.signup-form .login-link a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.signup-form .login-link a:hover {
+  text-decoration: underline;
+}
