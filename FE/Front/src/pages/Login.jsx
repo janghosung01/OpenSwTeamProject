@@ -3,7 +3,7 @@
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useState } from "react"
-
+import "./login.css"
 function Login({ onLoginSuccess }) {
   const navigate = useNavigate()
 
