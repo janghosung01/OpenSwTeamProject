@@ -2,7 +2,7 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.orm import Session
 
-from app.schemas import UserCreate, UserOut # 사용자 관련 스키마
+from app.schemas import UserCreate, UserOut, LoginRequest # 사용자 관련 스키마
 from app.models import User # 사용자 모델
 from app.deps import get_db # 데이터베이스 세션 의존성
 from app.utils import fetch_tmdb, TMDB_API_KEY # TMDB API 키 가져오기
