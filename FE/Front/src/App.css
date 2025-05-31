@@ -1,77 +1,83 @@
-/* 전역 스타일 */
+/* 전역 변수 설정 (다크 테마 기반) */
 :root {
-  --primary-color: #e50914;
-  --secondary-color: #221f1f;
-  --text-color: #f5f5f1;
-  --background-dark: #141414;
-  --background-light: #181818;
-  --card-background: #2d2d2d;
-  --hover-color: #ff0a16;
-  --transition-speed: 0.3s;
+  --primary-color: #e50914;         /* 주 색상 (강조용, 버튼 등) */
+  --secondary-color: #221f1f;       /* 보조 색상 */
+  --text-color: #f5f5f1;            /* 기본 텍스트 색상 */
+  --background-dark: #141414;       /* 전체 배경 색상 (다크 테마) */
+  --background-light: #181818;      /* 카드/박스 배경 등 약간 밝은 색 */
+  --card-background: #2d2d2d;       /* 카드 스타일용 배경 */
+  --hover-color: #ff0a16;           /* 마우스 오버 시 색상 */
+  --transition-speed: 0.3s;         /* 전환 애니메이션 속도 */
 }
 
+/* 기본 리셋 */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* 패딩과 테두리를 요소 크기에 포함 */
 }
 
+/*  바디 기본 스타일 */
 body {
   font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--background-dark);
-  color: var(--text-color);
-  line-height: 1.6;
+  background-color: var(--background-dark); /* 전체 배경색 */
+  color: var(--text-color);                 /* 기본 텍스트 색 */
+  line-height: 1.6;                          /* 줄 간격 */
 }
 
+/* 링크 스타일 */
 a {
-  text-decoration: none;
-  color: var(--text-color);
-  transition: color var(--transition-speed) ease;
+  text-decoration: none;                    /* 밑줄 제거 */
+  color: var(--text-color);                 /* 기본 링크 색상 */
+  transition: color var(--transition-speed) ease; /* 색상 전환 효과 */
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color);              /* 마우스 오버 시 강조 색상 */
 }
 
+/* 버튼 공통 스타일 */
 button {
-  cursor: pointer;
-  font-family: inherit;
-  transition: all var(--transition-speed) ease;
+  cursor: pointer;                          /* 마우스 커서 변경 */
+  font-family: inherit;                     /* 상속된 글꼴 사용 */
+  transition: all var(--transition-speed) ease; /* 모든 속성에 전환 효과 */
 }
 
+/* 제목 공통 스타일 */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-weight: 700;                         /* 굵게 */
+  margin-bottom: 1rem;                      /* 하단 여백 */
 }
 
-/* 공통 컨테이너 스타일 */
+/* 레이아웃 컨테이너 */
 .container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  max-width: 1200px;                        /* 최대 너비 제한 */
+  margin: 0 auto;                           /* 가운데 정렬 */
+  padding: 0 1rem;                          /* 좌우 패딩 */
 }
 
-/* 로그인, 회원가입 페이지 스타일 */
+/* 로그인 / 회원가입 레이아웃 */
 .auth-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 80px);
+  align-items: center;                      /* 가로 가운데 정렬 */
+  justify-content: center;                  /* 세로 가운데 정렬 */
+  min-height: calc(100vh - 80px);           /* 헤더 제외 전체 높이 확보 */
   padding: 2rem;
 }
 
+/* 로그인 / 회원가입 폼 스타일 */
 .auth-form {
-  background-color: var(--background-light);
+  background-color: var(--background-light);  /* 폼 배경 */
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);   /* 그림자 효과 */
 }
 
-/* 마이페이지 스타일 */
+/* 마이페이지 */
 .my-page {
   padding: 2rem;
   text-align: center;
@@ -80,5 +86,5 @@ h1, h2, h3, h4, h5, h6 {
 .my-page h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: var(--primary-color);
+  color: var(--primary-color);              /* 제목에 강조 색상 */
 }
