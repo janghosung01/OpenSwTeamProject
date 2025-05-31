@@ -23,3 +23,4 @@ app.add_middleware(
 
 # 라우터 등록
 app.include_router(movies.router, prefix="", tags=["Movies"])
+app.include_router(users.router, prefix="", tags=["Users"])
