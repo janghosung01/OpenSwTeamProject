@@ -24,3 +24,16 @@ async def search_movie(query: str = Query(..., min_length=1)):
         params={"api_key": TMDB_API_KEY, "query": query, "language": "ko-KR"}, # 검색어로 영화 조회
     )
     return MoviesResponse(results=data.get("results", [])[:5]) # 검색 결과 중 상위 5개만 반환
+
+# 영화 상세 정보 조회 엔드포인트
+@router.get("/movies/{movie_id}", response_model=Movie, summary="영화 상세 정보 조회")
+async def get_movie_detail(movie_id: int): # TMDB 영화 고유 ID
+    """
+    특정 movie_id의 상세 정보를 TMDB API에서 조회하여
+    Movie 스키마로 변환 후 반환합니다.
+    """
+    data = await fetch_tmdb(
+        endpoint=f"movie/{movie_id}",
+        params={"api_key": TMDB_API_KEY, "language": "ko-KR"},
+    )
+    return Movie(**data)    # TMDB API 응답을 Movie 스키마로 변환하여 반환
