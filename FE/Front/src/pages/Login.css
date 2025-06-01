@@ -1,25 +1,28 @@
-/* Login Page Styling */
+/* Login 페이지 전체 컨테이너 스타일 */
 .login-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 80px);
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  min-height: calc(100vh - 80px); /* 전체 높이에서 헤더 높이 제외 */
   padding: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/placeholder.svg?height=1080&width=1920")
-    no-repeat center center;
-  background-size: cover;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* 어두운 오버레이 */
+    url("/placeholder.svg?height=1080&width=1920") no-repeat center center; /* 배경 이미지 */
+  background-size: cover; /* 이미지 꽉 채우기 */
 }
 
+/* 로그인 폼 박스 */
 .login-form {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.75); /* 반투명한 어두운 배경 */
   padding: 3rem 4rem;
   border-radius: 4px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
+/* 제목 */
 .login-form h1 {
   color: var(--text-color);
   font-size: 2rem;
@@ -27,6 +30,7 @@
   text-align: center;
 }
 
+/* 입력 필드 라벨 */
 .login-form label {
   display: block;
   color: var(--text-color);
@@ -34,6 +38,7 @@
   font-size: 0.9rem;
 }
 
+/* 텍스트, 비밀번호 입력 필드 */
 .login-form input[type="text"],
 .login-form input[type="password"] {
   width: 100%;
@@ -46,12 +51,14 @@
   font-size: 1rem;
 }
 
+/* 입력 필드 포커스 시 색상 변경 */
 .login-form input[type="text"]:focus,
 .login-form input[type="password"]:focus {
   outline: none;
   background-color: #454545;
 }
 
+/* 버튼 기본 스타일 */
 .login-form button {
   width: 100%;
   padding: 1rem;
@@ -63,36 +70,43 @@
   cursor: pointer;
 }
 
+/* 제출 버튼 (로그인) */
 .login-form button[type="submit"] {
   background-color: var(--primary-color);
   color: white;
 }
 
+/* 제출 버튼 호버 효과 */
 .login-form button[type="submit"]:hover {
   background-color: var(--hover-color);
 }
 
+/* 취소 버튼 */
 .login-form button[type="button"] {
   background-color: transparent;
   color: var(--text-color);
   border: 1px solid var(--text-color);
 }
 
+/* 취소 버튼 호버 효과 */
 .login-form button[type="button"]:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 회원가입 링크 텍스트 */
 .login-form .signup-link {
   text-align: center;
   margin-top: 1rem;
   color: #737373;
 }
 
+/* 회원가입 링크 (a 태그) */
 .login-form .signup-link a {
   color: var(--text-color);
   text-decoration: none;
 }
 
+/* 링크 호버 시 밑줄 표시 */
 .login-form .signup-link a:hover {
   text-decoration: underline;
 }

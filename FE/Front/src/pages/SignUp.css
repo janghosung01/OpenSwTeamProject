@@ -1,25 +1,28 @@
-/* SignUp Page Styling */
+/* SignUp 페이지 전체 컨테이너 스타일 */
 .signup-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 80px);
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  min-height: calc(100vh - 80px); /* 전체 높이에서 헤더 높이 제외 */
   padding: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/placeholder.svg?height=1080&width=1920")
-    no-repeat center center;
-  background-size: cover;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* 어두운 오버레이 */
+    url("/placeholder.svg?height=1080&width=1920") no-repeat center center; /* 배경 이미지 */
+  background-size: cover; /* 이미지 꽉 채우기 */
 }
 
+/* 회원가입 폼 박스 */
 .signup-form {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.75); /* 반투명한 어두운 배경 */
   padding: 3rem 4rem;
   border-radius: 4px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
+/* 제목 */
 .signup-form h1 {
   color: var(--text-color);
   font-size: 2rem;
@@ -27,6 +30,7 @@
   text-align: center;
 }
 
+/* 입력 필드 라벨 */
 .signup-form label {
   display: block;
   color: var(--text-color);
@@ -34,6 +38,7 @@
   font-size: 0.9rem;
 }
 
+/* 텍스트, 비밀번호 입력 필드 */
 .signup-form input[type="text"],
 .signup-form input[type="password"] {
   width: 100%;
@@ -46,30 +51,35 @@
   font-size: 1rem;
 }
 
+/* 입력 필드 포커스 시 색상 변경 */
 .signup-form input[type="text"]:focus,
 .signup-form input[type="password"]:focus {
   outline: none;
   background-color: #454545;
 }
 
+/* 성별 선택 컨테이너 */
 .signup-form .gender-container {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; /* 남/여 사이 간격 */
   margin-bottom: 1.5rem;
 }
 
+/* 성별 라디오 버튼 + 라벨 묶음 */
 .signup-form .gender-option {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+/* 라디오 버튼 스타일 */
 .signup-form input[type="radio"] {
-  accent-color: var(--primary-color);
+  accent-color: var(--primary-color); /* 체크 시 색상 */
   width: 1rem;
   height: 1rem;
 }
 
+/* 버튼 기본 스타일 */
 .signup-form button {
   width: 100%;
   padding: 1rem;
@@ -81,36 +91,43 @@
   cursor: pointer;
 }
 
+/* 제출 버튼 (회원가입) */
 .signup-form button[type="submit"] {
   background-color: var(--primary-color);
   color: white;
 }
 
+/* 제출 버튼 호버 효과 */
 .signup-form button[type="submit"]:hover {
   background-color: var(--hover-color);
 }
 
+/* 취소 버튼 */
 .signup-form button[type="button"] {
   background-color: transparent;
   color: var(--text-color);
   border: 1px solid var(--text-color);
 }
 
+/* 취소 버튼 호버 효과 */
 .signup-form button[type="button"]:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 로그인 링크 텍스트 */
 .signup-form .login-link {
   text-align: center;
   margin-top: 1rem;
   color: #737373;
 }
 
+/* 로그인 링크 (a 태그) */
 .signup-form .login-link a {
   color: var(--text-color);
   text-decoration: none;
 }
 
+/* 로그인 링크 호버 시 밑줄 표시 */
 .signup-form .login-link a:hover {
   text-decoration: underline;
 }
