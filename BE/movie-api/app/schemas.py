@@ -46,3 +46,24 @@ class LoginRequest(BaseModel):
     """로그인 요청 스키마"""
     user_id: str = Field(..., alias="userId")   # 사용자 ID (필수)
     password: str # 비밀번호 (필수)
+
+
+# ---------------------------------------------------------------------------
+# 리뷰 관련 스키마
+# ---------------------------------------------------------------------------
+class ReviewCreate(BaseModel):  
+    """리뷰 생성 요청 스키마""" 
+    rating: float   # 평점 (0.0 ~ 10.0)
+    content: str    # 리뷰 내용 (최대 500자)
+
+class ReviewOut(BaseModel): 
+    """리뷰 응답 스키마"""  
+    id: int # 리뷰 ID
+    user_id: str = Field(..., alias="user_id")  # 문자열 로그인 ID
+    movie_id: int   # 영화 ID
+    rating: float   # 평점 (0.0 ~ 10.0)
+    content: str    # 리뷰 내용
+    created_at: datetime    # 리뷰 작성일시
+
+    class Config:   # Pydantic 설정
+        from_attributes = True  # ORM 모델에서 속성 가져오기
