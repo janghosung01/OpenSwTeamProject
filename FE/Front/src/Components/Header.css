@@ -1,16 +1,18 @@
+/* 헤더 전체 컨테이너 */
 .headerContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 좌우 정렬 */
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(20, 20, 20, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  position: sticky;
+  background-color: rgba(20, 20, 20, 0.95); /* 반투명 어두운 배경 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* 아래 그림자 */
+  position: sticky; /* 상단 고정 */
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /* 다른 요소 위에 렌더링 */
   height: 80px;
 }
 
+/* 왼쪽 상단 사이트 로고 또는 메인 페이지 링크 */
 .Mainpage {
   color: var(--primary-color);
   font-size: 1.8rem;
@@ -19,28 +21,35 @@
   letter-spacing: 0.5px;
 }
 
+/* 우측 메뉴 전체 묶음 */
 .Group {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* 메뉴 간격 */
 }
 
+/* 우측 개별 메뉴 아이템에 적용 */
 .right {
   display: flex;
   align-items: center;
 }
 
+/* 텍스트 링크 공통 스타일 */
 .word {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem;
-  position: relative;
+  position: relative; /* 밑줄 애니메이션용 기준 */
 }
-.Name{
-   font-size: 1rem;
+
+/* 사용자 이름 강조 표시 */
+.Name {
+  font-size: 1rem;
   font-weight: 500;
-  text-decoration: underline; 
+  text-decoration: underline;
 }
+
+/* 밑줄 애니메이션 효과 */
 .word::after {
   content: '';
   position: absolute;
@@ -57,7 +66,10 @@
   left: 10%;
 }
 
-.loginBtn, .logoutBtn, .signUpBtn {
+/* 공통 버튼 스타일 */
+.loginBtn,
+.logoutBtn,
+.signUpBtn {
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 4px;
@@ -66,6 +78,7 @@
   transition: all 0.3s ease;
 }
 
+/* 로그인 버튼 (강조 색상) */
 .loginBtn {
   background-color: var(--primary-color);
   color: white;
@@ -73,9 +86,10 @@
 
 .loginBtn:hover {
   background-color: var(--hover-color);
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* 살짝 위로 */
 }
 
+/* 로그아웃 버튼 (투명 배경 + 외곽선) */
 .logoutBtn {
   background-color: transparent;
   color: var(--text-color);
@@ -88,6 +102,7 @@
   transform: translateY(-2px);
 }
 
+/* 회원가입 버튼 (반투명 배경) */
 .signUpBtn {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-color);
@@ -99,13 +114,14 @@
   transform: translateY(-2px);
 }
 
+/* 반응형 처리 (화면 너비 768px 이하) */
 @media (max-width: 768px) {
   .headerContainer {
     padding: 1rem;
-    flex-direction: column;
+    flex-direction: column; /* 세로 정렬 */
     height: auto;
   }
-  
+
   .Group {
     margin-top: 1rem;
     width: 100%;
@@ -113,12 +129,14 @@
     flex-wrap: wrap;
     gap: 0.8rem;
   }
-  
+
   .word {
     font-size: 0.9rem;
   }
-  
-  .loginBtn, .logoutBtn, .signUpBtn {
+
+  .loginBtn,
+  .logoutBtn,
+  .signUpBtn {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }

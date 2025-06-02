@@ -6,6 +6,7 @@ function Home() {
   
   return (
     <div>
+        {/* 영화 목록 컴포넌트 */}
         <MovieList />
     </div>
   );

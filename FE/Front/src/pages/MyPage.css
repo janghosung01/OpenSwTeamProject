@@ -1,10 +1,13 @@
 /* MyPage Styling */
+
+/* 전체 페이지 컨테이너 */
 .mypage-container {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* 페이지 헤더 (타이틀 포함) */
 .mypage-header {
   display: flex;
   flex-direction: column;
@@ -18,13 +21,14 @@
   margin-bottom: 1rem;
 }
 
-/* 세로 레이아웃으로 변경 */
+/* 마이페이지 내부 콘텐츠 섹션 (세로 정렬) */
 .mypage-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+/* --- [회원 정보 섹션] --- */
 .user-info-section {
   background-color: var(--background-light);
   padding: 1.5rem;
@@ -40,13 +44,14 @@
   padding-bottom: 0.5rem;
 }
 
-/* 회원 정보 항목들을 항상 가로로 나란히 배열 */
+/* 회원 정보 항목 (이름, 아이디, 성별 등) - 가로 3열로 배치 */
 .user-info-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
+/* 각 회원 정보 카드 스타일 */
 .user-info-item {
   display: flex;
   flex-direction: column;
@@ -67,6 +72,7 @@
   font-weight: 500;
 }
 
+/* --- [작성한 리뷰 섹션] --- */
 .reviews-section {
   background-color: var(--background-light);
   padding: 1.5rem;
@@ -82,6 +88,7 @@
   padding-bottom: 0.5rem;
 }
 
+/* 리뷰 목록을 카드 형식으로 정렬 */
 .reviews-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -89,6 +96,7 @@
   list-style: none;
 }
 
+/* 개별 리뷰 카드 */
 .review-item {
   background-color: var(--card-background);
   padding: 1.5rem;
@@ -101,6 +109,7 @@
   transform: translateY(-5px);
 }
 
+/* 영화 제목 */
 .review-movie-title {
   font-size: 1.2rem;
   font-weight: bold;
@@ -108,25 +117,29 @@
   color: var(--text-color);
 }
 
+/* 평점 표시 */
 .review-rating {
   color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
+/* 리뷰 본문 */
 .review-content {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
+/* 리뷰 작성일 */
 .review-date {
   font-size: 0.8rem;
   color: #737373;
   text-align: right;
 }
 
+/* 리뷰 삭제 버튼 */
 .review-button-delete {
-  align-self: flex-end; /* flex column일 때 오른쪽 정렬 */
+  align-self: flex-end;
   margin-top: 0.5rem;
   background-color: #ff4d4f;
   color: white;
@@ -140,6 +153,7 @@
   background-color: #d9363e;
 }
 
+/* 리뷰가 없을 때의 안내 메시지 */
 .no-reviews {
   text-align: center;
   padding: 3rem;
@@ -148,6 +162,7 @@
   margin: 2rem 0;
 }
 
+/* 로딩 표시 */
 .loading {
   display: flex;
   justify-content: center;
@@ -157,8 +172,9 @@
   color: var(--text-color);
 }
 
-/* 반응형 디자인 */
+/* --- 반응형 디자인 --- */
 @media (max-width: 768px) {
+  /* 모바일 환경: 회원정보는 좁은 간격 유지 */
   .user-info-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
@@ -168,6 +184,7 @@
     padding: 0.8rem;
   }
 
+  /* 리뷰는 한 열로 표시 */
   .reviews-list {
     grid-template-columns: 1fr;
   }
