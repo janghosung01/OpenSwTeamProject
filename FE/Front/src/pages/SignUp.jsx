@@ -3,7 +3,7 @@
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import "./Signup.css"
+import "./SignUp.css"
 
 function SignUp() {
   // 회원가입 폼 데이터 관리
