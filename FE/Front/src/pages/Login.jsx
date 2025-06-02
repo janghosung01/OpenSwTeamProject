@@ -3,7 +3,7 @@
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useState } from "react"
-import "./login.css"
+import "./Login.css"
 
 function Login({ onLoginSuccess }) {
   const navigate = useNavigate() // 페이지 이동용 훅
