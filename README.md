@@ -12,6 +12,12 @@
 
 ---
 
+## Deployment
+```
+   https://open-sw-team-project.vercel.app
+```
+---
+
 ## 필요한 소프트웨어 및 하드웨어 요구사항  
 - Node.js (v16 이상 권장)  
 - npm 또는 yarn (패키지 매니저)  
