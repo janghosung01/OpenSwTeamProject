@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import "./SignUp.css"
 
 function SignUp() {
@@ -143,7 +143,10 @@ function SignUp() {
 
         {/* 로그인 페이지로 이동 링크 */}
         <div className="login-link">
-          이미 계정이 있으신가요? <a href="/login">로그인</a>
+          이미 계정이 있으신가요? 
+          <Link to="/login">
+               로그인
+          </Link>
         </div>
       </form>
     </div>

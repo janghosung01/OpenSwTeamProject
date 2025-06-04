@@ -1,6 +1,6 @@
 "use client"
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import { useState } from "react"
 import "./Login.css"
@@ -110,7 +110,10 @@ function Login({ onLoginSuccess }) {
 
         {/* 회원가입 페이지로 이동 링크 */}
         <div className="signup-link">
-          계정이 없으신가요? <a href="/signup">회원가입</a>
+          계정이 없으신가요? 
+          <Link to="/signup">
+              회원가입
+          </Link>
         </div>
       </form>
     </div>
