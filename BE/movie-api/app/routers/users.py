@@ -2,9 +2,10 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.orm import Session
 
-from app.schemas import UserCreate, UserOut, LoginRequest # 사용자 관련 스키마
-from app.models import User # 사용자 모델
+from app.schemas import UserCreate, UserOut, LoginRequest, ReviewOut # 사용자 관련 스키마, 리뷰 관련 스키마
+from app.models import User, Review # 사용자 모델, 리뷰 모델
 from app.deps import get_db # 데이터베이스 세션 의존성
+from app.routers.reviews import make_review_out
 from app.utils import fetch_tmdb, TMDB_API_KEY # TMDB API 키 가져오기
 
 router = APIRouter() # 사용자 관련 라우터
@@ -32,3 +33,19 @@ def login(req: LoginRequest, db: Session = Depends(get_db)):
     if not user or user.password != req.password: 
         raise HTTPException(400, "아이디 또는 비밀번호가 올바르지 않습니다.")
     return user
+
+# 사용자별 리뷰 조회 엔드포인트
+@router.get(
+    "/users/{user_id}/reviews",
+    response_model=List[ReviewOut],
+    summary="사용자별 리뷰 조회"
+)
+def list_user_reviews( 
+    user_id: str = Path(..., description="로그인 ID 문자열"),
+    db: Session = Depends(get_db),
+):
+    user = db.query(User).filter(User.user_id == user_id).first() # user_id로 사용자 조회
+    if not user:
+        raise HTTPException(404, "해당 user_id가 없습니다.")
+    db_reviews = db.query(Review).filter(Review.user_id == user.id).all() # 사용자 ID로 리뷰 조회
+    return [make_review_out(r, user.user_id) for r in db_reviews]
