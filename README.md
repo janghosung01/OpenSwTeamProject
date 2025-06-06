@@ -12,7 +12,6 @@
 
 회원가입, 로그인, 영화 목록 조회, 상세 영화 정보 및 리뷰 작성/삭제, 마이페이지 기능을 제공합니다.
 
-![Screenshot_2.png](attachment:1a55fa09-a757-45cd-97a4-5d8ab82edf6b:Screenshot_2.png)
 
 ---
 
