@@ -1,11 +1,18 @@
 # Python 3.11 기반의 경량 이미지 사용
 FROM python:3.11-slim
 
-WORKDIR /app
+# pg_isready 를 포함한 클라이언트 툴 설치
+RUN apt-get update \
+ && apt-get install -y postgresql-client \
+ && rm -rf /var/lib/apt/lists/*
+
+ # 작업 디렉토리 설정
+ WORKDIR /app 
 
 #Poetry 설치
 RUN pip install poetry
 
+# Poetry 설정: 캐시 디렉토리 변경
 COPY pyproject.toml poetry.lock* /app/
 
 # Poetry를 이용하여 의존성 설치 
