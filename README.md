@@ -17,9 +17,11 @@
 
 ## Deployment
 
-```jsx
-https://open-sw-team-project.vercel.app
-```
+프론트 Vercel 배포 url (초기 로딩시 시간이 소요될 수 있습니다.)
+<https://open-sw-team-project.vercel.app>
+
+백엔드  Render 배포 url (초기 로딩시 시간이 소요될 수 있습니다.)
+<https://movie-api-test-latest.onrender.com>
 
 ---
 
@@ -43,7 +45,11 @@ https://open-sw-team-project.vercel.app
 
 **Back**
 
-- docker
+- Fastapi (python 3.11)
+- PostgreSQL + SQLAlchemy (데이터베이스 + ORM)
+- Docker + Render(컨테이너화 + 배포)
+- Poetry(의존성 관리)
+- uvicorn(FastAPI 코드를 실제 서버로 띄워 주는 실행 환경)
 
 ---
 
@@ -58,10 +64,11 @@ https://open-sw-team-project.vercel.app
     ```
     
 
-## 설치 및 설정 방법(Back)
+## 설치 및 설정 방법(Back 로컬환경)
 
 1. 프로젝트 클론 또는 다운로드
 2. docker설치 및 실행
+3. 해당 프로젝트 파일경로의 터미널에서 명령어 실행
 
 ```jsx
 docker-compose up --build     # 빌드 및 실행
