@@ -17,6 +17,7 @@ services:
     environment:
       TMDB_API_KEY: 109cce58d37ce52d52bad29ccb046065
       SECRET_KEY: CHANGE_ME
+      DATABASE_URL: postgresql://movie_user:movie_pass@db:5432/movie_user_db
     ports:
       - "8000:8000"                # 호스트 8080 → 컨테이너 8000
 
